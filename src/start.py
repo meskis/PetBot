@@ -1,12 +1,15 @@
-import PetBot
+from PetBot import PetBot
 import sys
 
 
 def main():
+    global bot
+
     try:
-        PetBot.start()
+        bot = PetBot()
+        bot.start()
     except KeyboardInterrupt:
-        PetBot.stop()
+        bot.stop()
         print "Keyboard interrupt detected, stopping..."
     except:
         print "Unexpected error:", sys.exc_info()[0]
