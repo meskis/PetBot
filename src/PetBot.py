@@ -31,4 +31,12 @@ class PetBot():
 
     def stop(self):
         print "Stopping bot"
+        self.stop_movement()
+        self.stop_sensors()
         return None
+
+    def stop_movement(self):
+        self.movement.stop_moving()
+
+    def stop_sensors(self):
+        self.distance_sensor.stop_measuring()
